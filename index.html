@@ -311,7 +311,7 @@ let cur=0;
 /* pins */
 const NS='http://www.w3.org/2000/svg',pg=$('#pins');
 R.forEach((p,i)=>{const g=document.createElementNS(NS,'g');g.setAttribute('class','pin'+(i===0?' on':''));g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',p.n);
- g.innerHTML=`<circle class="hit" cx="${p.x}" cy="${p.y}" r="26"/><circle class="dot" cx="${p.x}" cy="${p.y}" r="9"/><text x="${p.x}" y="${p.y+28}" text-anchor="middle">${p.n}</text>`;
+ g.innerHTML=`<circle class="hit" cx="${p.x}" cy="${p.y}" r="33"/><circle class="dot" cx="${p.x}" cy="${p.y}" r="9"/><text x="${p.x}" y="${p.y+28}" text-anchor="middle">${p.n}</text>`;
  g.addEventListener('click',()=>pick(i));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i)}});pg.appendChild(g)});
 /* route chips */
 const cr=$('#chRot');R.forEach((p,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=p.n;b.setAttribute('aria-pressed',i===0);cr.appendChild(b)});
